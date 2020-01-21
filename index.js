@@ -17,7 +17,7 @@ app.use(authRouter);
 app.use(blogRouter);
 app.use(adminblogRouter);
 
-app.listen(3000, () => {
+app.listen(5000, () => {
     console.log('Listening');
 }); 
 
