@@ -5,6 +5,7 @@ const authRouter = require('./routes/admin/auth');
 const adminblogRouter = require('./routes/admin/blogs');
 const blogRouter = require('./routes/blogs');
 const app = express();
+const port = process.env.PORT || 5000;
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true })); // applys the parser will automatically to every route the app uses 
@@ -21,3 +22,6 @@ app.listen(5000, () => {
     console.log('Listening');
 }); 
 
+server.listen(port, () => {
+    console.log("App is running on port " + port)
+});
