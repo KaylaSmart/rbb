@@ -1,0 +1,89 @@
+html,body{
+    height: 100vh;
+    width: 100%;
+    background: transparent;
+    font-family: sans-serif;
+    color: #ffff;
+}
+
+#logo a{
+    text-decoration: none;
+    font-weight: bolder;
+    color:#ffff;
+}
+#topnav{
+    color: #ffff;
+    background:black ;
+    box-shadow:  0 0 12 33rem rgba(0, 0, 0, .5) !important;  
+
+}
+
+h1{    color: #ffff !important;
+}
+
+label{
+    color: #ffff !important;
+}
+
+#sign{
+    height: 100%;
+    width:50%;
+    float: left;
+}
+
+#sign img{
+    margin-top: 50%;
+
+}
+
+.title{
+    margin-top: 50%;
+
+}
+
+.shadow{
+    box-shadow:  0 0 12 33rem rgba(0, 0, 0, .5);  
+    box-shadow: 10px 0 5px -2px rgb(109, 109, 109);
+}
+
+.color-change-5x {
+	-webkit-animation: color-change-5x 8s linear infinite alternate both;
+	        animation: color-change-5x 8s linear infinite alternate both;
+}
+
+  @-webkit-keyframes color-change-5x {
+    0% {
+      background: #ade7eb;
+    }
+    25% {
+      background: #95839f;
+    }
+    50% {
+      background: #f08888ec;
+    }
+    75% {
+      background: #f5be10;
+    }
+    100% {
+      background: #9fcb91;
+    }
+  }
+  @keyframes color-change-5x {
+    0% {
+      background: #9be7ed;
+    }
+    25% {
+      background: #a680bc;
+    }
+    50% {
+          background: #f08888ec;
+      ;
+    }
+    75% {
+      background: #d2bd78;
+    }
+    100% {
+      background: #a0f0887e;
+    }
+  }
+  
