@@ -8,8 +8,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
-    "start": "nodemon index.js"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
@@ -27,3 +26,6 @@
     "css-loader": "^3.4.2"
   }
 }
+
+
+// "dev": "nodemon index.js","dev": "nodemon index.js",
