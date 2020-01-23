@@ -17,7 +17,7 @@ module.exports = ({ content }) => {
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8" />    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/style.css">
 
         <title>RBB</title>
       </head>
@@ -34,9 +34,9 @@ module.exports = ({ content }) => {
                 <a href="" class="blog-header-logo">RED BOTTOM BRUNCH</a>
             </div>
             <div class="col-2 justify-content-end align-items-center">
-                <i class="fa fa-instagram px-3" aria-hidden="true"><a href="https://www.instagram.com/therbbpodcast/"</a></i>
-                <i class="fa fa-apple px-3" aria-hidden="true"><a href="https://podcasts.apple.com/us/podcast/red-bottom-brunch-podcast/id1437120471"</a></i>
-                <i class="fa fa-spotify px-3" aria-hidden="true"><a href="https://open.spotify.com/show/0HItBerR1fasuciJ66hpdt"</a></i>
+                <i class="fa fa-instagram px-3" aria-hidden="true"><a href""></a></i>
+                <i class="fa fa-apple px-3" aria-hidden="true"><a href="https://podcasts.apple.com/us/podcast/red-bottom-brunch-podcast/id1437120471"></a></i>
+                <i class="fa fa-spotify px-3" aria-hidden="true"><a href""></a></i>
             </div>
         </div>
 </div> 
@@ -46,19 +46,19 @@ module.exports = ({ content }) => {
           <div class="collapse navbar-collapse justify-content-center" i>
             <ul class="navbar-nav justify-content-between ">
               <li class="nav-item px-5">
-                <a class="nav-link" href="./home.js">HOME</a>
+                <a class="nav-link" href="/">HOME</a>
               </li>
               <li class="nav-item px-5">
-                <a class="nav-link" href="./about.js">ABOUT</a>
+                <a class="nav-link" href="/about">ABOUT</a>
               </li>
               <li class="nav-item px-5">
-                  <a class="nav-link " href="./index.js">BLOG</a>
+                  <a class="nav-link " href="blogs">BLOG</a>
               </li>
               <li class="nav-item px-5">
-                  <a class="nav-link" href="./pod.js">PODCAST</a>
+                  <a class="nav-link" href="pod">PODCAST</a>
               </li>
               <li class="nav-item px-5">
-                  <a class="nav-link " href="./index.js/#thegals">THE GALS</a>
+                  <a class="nav-link " href="about/#thegals">THE GALS</a>
               </li>
             </ul>
           </div>

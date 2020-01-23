@@ -68,7 +68,7 @@ module.exports = () => {
                 <i class="far fa-keyboard fa-7x fa-sm-3x "></i>
                 <h5 class="card-title">BLOG</h5>
                 <p class="card-text  d-sm-block">Check out our latest posts!</p>
-                <a href="#" class="btn ">BLOG</a>
+                <a href="index.js" class="btn ">BLOG</a>
               </div>
             </div>
           </div>  
@@ -82,7 +82,7 @@ module.exports = () => {
                 <h5 class="card-title">PODCAST</h5>
                 <p class="card-text  d-sm-block">Listen to new episodes here!
                 </p>
-                <a href="#" class="btn ">LISTEN</a>
+                <a href="pod.js" class="btn ">LISTEN</a>
               </div>
             </div>
           </div>

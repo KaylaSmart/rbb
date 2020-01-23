@@ -7,10 +7,10 @@ module.exports = () => {
     content:` 
 
 <div class="container-fluid my-2  h-80 podlogotop d-none d-sm-none d-md-block ">
-
+    <img src="./../images/71FA2A8C-46E5-4966-86B9-D87F8A6546D9.png" alt="">
 </div>
 
-<div class="container-fluid py-5 px-5 mt-5 h-75 text-justify">
+<div class="container-fluid discrip  px-5 mt-5 h-50 text-justify">
 <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-6 px-1">
@@ -20,7 +20,7 @@ module.exports = () => {
     </div>
     <div class="col-md-3"></div>
 
-</div>
+    </div>
 </div>
 <div class="container-fluid px-5">
 <div class="row my-5">
@@ -51,9 +51,9 @@ module.exports = () => {
 <div class="row">
     <div class="col-lg-12 px-5  py-4 my-2 text-center">
         <h4>LISTEN ON </h4>
-        <i class="fab fa-apple fa-3x mx-4"><a href="https://podcasts.apple.com/us/podcast/red-bottom-brunch-podcast/id1437120471"</a></i>
+        <i class="fab fa-apple fa-3x mx-4"><a href="https://podcasts.apple.com/us/podcast/red-bottom-brunch-podcast/id1437120471"></a></i>
         <i class="fab fa-soundcloud fa-3x mx-4"><a href="https://open.spotify.com/show/0HItBerR1fasuciJ66hpdt"> </a></i>
-        <i class="fab fa-spotify fa-3x mx-4"><a href="https://open.spotify.com/show/0HItBerR1fasuciJ66hpdt"</a></i>
+        <i class="fab fa-spotify fa-3x mx-4"><a href="https://open.spotify.com/show/0HItBerR1fasuciJ66hpdt"></a></i>
         <i class="fab fa-google-play fa-3x mx-4"><a href="https://play.google.com/music/listen?u=0#/ps/Iwd4pzxmyabv5yton63tueni3wi"></a></i>
         <!-- <i class=" fa fa-"></i> -->
     </div>
