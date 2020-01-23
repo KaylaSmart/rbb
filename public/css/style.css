@@ -633,8 +633,8 @@ transition: 0.8s ease;
 
 .follow p{
   font-family: 'Poppins', sans-serif;
-  font-size: .5em;
-  letter-spacing: 1rem;
+  font-size: 18px;
+  letter-spacing: .6rem;
 }
 
 .insta{
@@ -754,7 +754,7 @@ letter-spacing: 1rem;
 
 .podlogotop{
     height: 40vh;
-    background: url('./images/71FA2A8C-46E5-4966-86B9-D87F8A6546D9.png') no-repeat center center fixed;
+    background: url('./../images/71FA2A8C-46E5-4966-86B9-D87F8A6546D9.png') no-repeat center center fixed;
     width: 100%;
     background-size: 50%;
     position: relative;

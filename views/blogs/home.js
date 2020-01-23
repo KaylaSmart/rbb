@@ -9,7 +9,7 @@ module.exports = () => {
         
         
         <div class=" container-flud py-5 px-5 my-0 mx-0 text-right">
-          <h5 class=" hilove display-1 d-none d-sm-none d-md-block d-lg-inline " data-aos="fade-left">hey there</h5>
+          <h5 class=" hilove display-1 d-none d-sm-none d-md-block d-lg-inline ml-5 " data-aos="fade-left">hey there</h5>
         </div>
         
         
@@ -68,7 +68,7 @@ module.exports = () => {
                 <i class="far fa-keyboard fa-7x fa-sm-3x "></i>
                 <h5 class="card-title">BLOG</h5>
                 <p class="card-text  d-sm-block">Check out our latest posts!</p>
-                <a href="index.js" class="btn ">BLOG</a>
+                <a href="index.js" class="btn mt-4">BLOG</a>
               </div>
             </div>
           </div>  
@@ -82,7 +82,7 @@ module.exports = () => {
                 <h5 class="card-title">PODCAST</h5>
                 <p class="card-text  d-sm-block">Listen to new episodes here!
                 </p>
-                <a href="pod.js" class="btn ">LISTEN</a>
+                <a href="pod.js" class="btn mt-4 ">LISTEN</a>
               </div>
             </div>
           </div>
@@ -101,7 +101,7 @@ module.exports = () => {
             </div>
           </div>
            <!-- <div class="overlay"></div> -->
-           <p class="text-light">@therbbpodcast</p>
+           <p class="text-dark mt-3">@therbbpodcast</p>
            <div class="row my-3 py-3">    
              <div class="col-sm-3 m-0 p-0">
                <div>

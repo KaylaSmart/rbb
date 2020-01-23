@@ -1,34 +1,23 @@
 const layout = require('../layout');
 
 module.exports = ({ blogs }) => {
-    const renderedBlogs = blogs.map(blog => {
-        return `
-        <div>
-          <h2> COMING SOON</>
-        </div>`
-       
-      
-      })     
-  
-    .join('\n');
-
   return layout({
     content: `
       <section class="banner">
         <div class="container">
           <div class="columns is-centered">
-            <img src="/images/banner.jpg" />
+            
           </div>
         </div>
       </section>
       
-      <section>
-        <div class="container">
+      <section class="h-100 py-5">
+        <div class="container-fluid ">
           <div class="columns">
             <div class="column "></div>
             <div class="column is-four-fifths">
               <div>
-                <h2 class="title text-center">Featured Post</h2>
+                <h1 class="title text-center">COMING SOON!</h1>
                 <div class="columns ">
                  
                 </div>
@@ -39,5 +28,5 @@ module.exports = ({ blogs }) => {
         </div>
       </section>
     `
-  });
-};  
+    });
+  };

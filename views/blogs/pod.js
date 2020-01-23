@@ -7,7 +7,7 @@ module.exports = () => {
     content:` 
 
 <div class="container-fluid my-2  h-80 podlogotop d-none d-sm-none d-md-block ">
-    <img src="./../images/71FA2A8C-46E5-4966-86B9-D87F8A6546D9.png" alt="">
+   
 </div>
 
 <div class="container-fluid discrip  px-5 mt-5 h-50 text-justify">
