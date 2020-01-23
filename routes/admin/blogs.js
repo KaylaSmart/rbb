@@ -31,7 +31,7 @@ router.post(
 handleErrors(blogsNewTemplate),
  async (req, res) => {
     const image = req.file.buffer.toString('base64');
-    const { title, article, author } = req.body;
+    const { title, article, image, author } = req.body;
     await blogsRepo.create({ title, article, image, author });
 
     res.redirect('/admin/blogpost');
