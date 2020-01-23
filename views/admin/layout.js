@@ -80,9 +80,9 @@ module.exports = ({ content }) => {
         <div class="container-fluid justify-content-center">
           <div class="row">
               <div class="sidenav mr-5">
-                <a href="#about">BLOGS</a>
-                <a href="#services">NEW</a>
-                <a href="#clients">EDIT</a>
+                <a href="/admin/blogpost">BLOGS</a>
+                <a href="/admin/blogpost/new">NEW</a>
+                <a href="/admin/blogpost/:id/edit">EDIT</a>
               </div>
             ${content}
           </div>
