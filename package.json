@@ -1,8 +1,7 @@
 {
-  "name": "RBB",
+  "name": "rbb",
   "version": "1.0.0",
   "description": "",
-  "version": "1.0.0",
   "main": "index.js",
   "engines": {
     "node": "13.6.0"
