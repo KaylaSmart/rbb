@@ -39,18 +39,13 @@ router.get('/blog', function(req, res){
 router.get("/signup",function(req, res){
     res.render("signup", {page: 'signup'}); 
  });
+
 //handle signup logic
- router.post('/signup', (req,res, next) =>{
+ router.post('/signup', async (req,res) =>{
     req.body.username
     req.body.password
-    User.register(new User({username:req.body.username}), req.body.password, function(err){
-            if(err){
-                console.log(err);
-                return next(err);
-            }
-            console.log('User signed up!')
-            passport.authenticate("local")(req, res, function(){
-                // req.flash("success", "Successfully Signed Up! Nice to meet you " + req.body.username);
+   await User.register(new User({username:req.body.username}), req.body.password, async function(err){
+            await passport.authenticate("local")(req, res, function(){
                 res.send("you have signed up!"); 
              });
         });
