@@ -2,9 +2,6 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const User = require('../models/user');
-const createUser = require('../user.controller');
-const passportLocalMongoose = require('passport-local-mongoose');
-
 
 //index
 router.get('/', function(req, res){
@@ -43,13 +40,16 @@ router.get("/signup",function(req, res){
     res.render("signup", {page: 'signup'}); 
  });
 
-
-
 //handle signup logic
- router.post('/signup', createUser, (req,res) =>{
-     res.send('You have created an account !')
- });
-//   
+ router.post('/signup', (req,res) =>{
+   const user = User.register(new User({username:req.body.username}), req.body.password, async function(err){
+         await passport.authenticate("local")(req, res, function(){
+                res.send("you have signed up!"); 
+             });
+        });
+        await user.setPassword('password');
+        await user.save();
+});
 
 
 // =======
