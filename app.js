@@ -56,7 +56,7 @@ app.use(function(req,res,next){
     next();
 });
 
-passport.use(new LocalStrategy(User.authenticate()));
+passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());//encode
 passport.deserializeUser(User.deserializeUser());//unencode
 
