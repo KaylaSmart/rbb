@@ -52,7 +52,7 @@ router.get("/signup",function(req, res){
             }
             console.log('User signed up!')
             passport.authenticate("local")(req, res, function(){
-                req.flash("success", "Successfully Signed Up! Nice to meet you " + req.body.username);
+                // req.flash("success", "Successfully Signed Up! Nice to meet you " + req.body.username);
                 res.send("you have signed up!"); 
              });
         });
