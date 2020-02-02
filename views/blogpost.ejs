@@ -1,9 +1,4 @@
-const layout = require('../layout');
-
-module.exports = ({ blogs }) => {
-  const renderedBlogs = blogs.map((blog) =>{
-    return layout({
-        content:` 
+<% include ../partials/header %>
 <hr>
 <div class="container-fluid">
     <div class="container d-flex">
@@ -63,8 +58,5 @@ module.exports = ({ blogs }) => {
     </div>
 </div>
 </div>
-`
-    });
 
-  });
-};
+<% include ../partials/footer %>

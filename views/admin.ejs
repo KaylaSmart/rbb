@@ -1,6 +1,4 @@
-module.exports = ({ content }) => {
-    return `
-    <!DOCTYPE html>
+<!DOCTYPE html>
     <html lang="en">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,7 +13,7 @@ module.exports = ({ content }) => {
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8" />    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../admin.css">
+    <!-- <link rel="stylesheet" href="/admin.css"> -->
     <title>RBB</title>
     <body class="">
     <style>
@@ -56,9 +54,17 @@ module.exports = ({ content }) => {
       .sidenav {padding-top: 15px;}
       .sidenav a {font-size: 18px;}
     }
+    .moveover{
+        margin-left: 25%;
+        margin-right: 20%;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
     </style>
          
-  
+    <div class="container-fluid">
+
+   
          <header>
            <nav class="navbar navbar-bottom">
              <div class="container navbar-container">
@@ -80,18 +86,57 @@ module.exports = ({ content }) => {
         <div class="container-fluid justify-content-center">
           <div class="row">
               <div class="sidenav mr-5">
-                <a href="/admin/blogpost">BLOGS</a>
-                <a href="/admin/blogpost/new">NEW</a>
-                <a href="/admin/blogpost/:id/edit">EDIT</a>
+                <a href="/admin">BLOGS</a>
+                <a href="admin/new">NEW</a>
+                <!-- <a href="edit.ejs">EDIT</a> -->
               </div>
-            ${content}
+              <header class="jumbotron col-lg-8 moveover text-center">
+                <div class="container-fluid justify-content-center">
+                    <h1><span class="glyphicon glyphicon-tent"></span> Welcome RBB Gal!</h1>
+                    <p>View your recent blogs!</p>
+                    <p>
+                       <a class="btn btn-primary btn-lg" href="/admin/new">Add New Blog</a>
+                    </p>
+                     <p>
+                     <!-- <form action="/campgrounds" method="GET" class="form-inline" id="campground-search">
+                       <div class="form-group">
+                         <input type="text" name="search" placeholder="Campground search..." class="form-control">
+                       </div>
+                     </form> -->
+                    </p>
+                </div>
+            </header>
+
+            <table class="table moveover">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <% blogs.forEach(function(blog){ %>
+                  <tr>
+                    <th scope="row"></th>
+                    <td><%= blog.title %></td>
+                    <td><%= blog.author %></td>
+                    <td><%= blog.createdAt %></td> a
+                    <td><a href="admin/<%= blog._id %>/edit" class="btn btn-primary">Edit</a></td>
+                    <td><form class="delete-form" action="admin/<%=blog._id%>?_method=DELETE" method="POST">
+                        <button class="btn btn-xs btn-danger">Delete</button>
+                      </form>
+                </tr>
+                <% }); %>
+                </tbody>
+              </table>
           </div>
         
           </div>
-          
+        </div>
         </body>
    
       </html>
-    `;
-  };
-  
