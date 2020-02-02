@@ -1,123 +1,10 @@
-<!-- <h1>signup form</h1>
 
-
-<form action="/signup" method="post">
-    <input type="text" name="username" placeholder="email">
-    <input type="password" name="password" placeholder="password">
-    <button>submit</button>
-</form> -->
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>RBB</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
-    <!-- <link href="/css/main.css" rel="stylesheet"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"></link>
-    <link href="https://cdn.quilljs.com/1.0.0/quill.snow.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8" />    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/stylesheet/signin.css">
-    <!-- <link rel="stylesheet" href="./main.css"> -->
-    
-    <title>Sign In</title>
-</head>
-<style>
-    body{
-        height: 100vh;
-        width: 100%;
-        background: transparent;
-        font-family: sans-serif;
-        color: #ffff;
-    }
-    
-    #logo a{
-        text-decoration: none;
-        font-weight: bolder;
-        color:#ffff;
-    }
-    #topnav{
-        color: #ffff;
-        background:black ;
-        box-shadow:  0 0 12 33rem rgba(0, 0, 0, .5) !important;  
-    
-    }
-    
-    h1{    color: #ffff !important;
-    }
-    
-    label{
-        color: #ffff !important;
-    }
-    
-    #sign{
-        height: 100%;
-        width:50%;
-        float: left;
-    }
-    
-    #sign img{
-        margin-top: 50%;
-    
-    }
-    
-    .title{
-        margin-top: 50%;
-    
-    }
-    
-    .shadow{
-        box-shadow:  0 0 12 33rem rgba(0, 0, 0, .5);  
-        box-shadow: 10px 0 5px -2px rgb(109, 109, 109);
-    }
-    
-    .color-change-5x {
-        -webkit-animation: color-change-5x 8s linear infinite alternate both;
-                animation: color-change-5x 8s linear infinite alternate both;
-    }
-    
-      @-webkit-keyframes color-change-5x {
-        0% {
-          background: #ade7eb;
-        }
-        25% {
-          background: #95839f;
-        }
-        50% {
-          background: #f08888ec;
-        }
-        75% {
-          background: #f5be10;
-        }
-        100% {
-          background: #9fcb91;
-        }
-      }
-      @keyframes color-change-5x {
-        0% {
-          background: #9be7ed;
-        }
-        25% {
-          background: #a680bc;
-        }
-        50% {
-              background: #f08888ec;
-          ;
-        }
-        75% {
-          background: #d2bd78;
-        }
-        100% {
-          background: #a0f0887e;
-        }
-      }
-      
-    
-    </style>
+
+<% include ../partials/head %> 
+
 <body>
     <div class="container-fluid  text-center" id="topnav">
         <div class="align-items-center">
@@ -156,11 +43,9 @@
               <div class="field">
                 <label class="label">Password</label>
                 <input required class="input" placeholder="Password" name="password" type="password" />
-                <!-- <p class="help is-danger">${getError(errors, 'password')}</p> -->
               </div>
               <button class="button is-primary">Submit</button>
             </form>
-            <a href="/signup">Need an account? Sign Up</a>
           <!-- </div> -->
         </div>    
     </div>

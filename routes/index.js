@@ -2,9 +2,7 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const User = require('../models/user');
-const blogRoute = require('../routes/blog');
-// const adminRoute = require('../routes/admin');
-const Blog = require('../models/blog');
+
 //index
 router.get('/', function(req, res){
     res.render('home');
