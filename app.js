@@ -12,7 +12,7 @@ const mongoose = require('mongoose'),
         logger = require('morgan'),
         session = require('express-session');
 
-        const MongoStore = require('connect-mongo')(session);
+        const MongoStore = connectMongo(session);
         
 const fs = require('fs');
 const blogRoutes = require("./routes/blog"),
@@ -60,11 +60,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-app.use(require('express-session')({
-    secret: "Gleemer Slaps so Dang hard",
-    resave: false,
-    saveUninitialized: false
-}));
+// app.use(require('express-session')({
+//     secret: "Gleemer Slaps so Dang hard",
+//     resave: false,
+//     saveUninitialized: false
+// }));
 app.use(function(req,res,next){
     res.locals.currentUser = req.user;
     next();
