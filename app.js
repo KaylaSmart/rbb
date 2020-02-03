@@ -90,7 +90,7 @@ mongoose.set('useCreateIndex', true);
  
 app.use(session({
     secret: 'foo',
-    store: new MongoStore(options)
+    store: new MongoStore('mongodb+srv://devsmart:juturna@cluster0-oureg.mongodb.net/test?retryWrites=true&w=majority')
 }));
 
 app.use('/', indexRoutes);
