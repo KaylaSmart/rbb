@@ -17,15 +17,25 @@ const blogRoutes = require("./routes/blog"),
     adminRoutes = require("./routes/admin");
     //  db = require('../models');
     
+// const redis = require('redis').createClient();
 const path = require('path');
 
         // seedDB = requre('./seeds');
-        const port = process.env.PORT || 5001;
-const router = express.Router();
+const port = process.env.PORT || 5001;
+// const router = express.Router();
 
 // const databaseUri = process.env.MONGODB_URI || 'mongodb://localhost/app_demo';
 
+// var client = require('redis').createClient(process.env.REDIS_URL);
 
+
+if(process.env.REDISTOGO_URL){
+    var rtg   = require("url").parse(process.env.REDISTOGO_URL);
+    var redis = require("redis").createClient(rtg.port, rtg.hostname);
+    redis.auth(rtg.auth.split(":")[1]);
+}else{
+    var redis = require("redis").createClient();  
+}
 
 
 // mongoose.connect('mongodb://localhost/app_demo');
@@ -81,7 +91,12 @@ app.use('/admin', adminRoutes);
 // app.use("/admin/:id/post", postRoutes);
 
 
+// client.on('connect', function(){
+//     console.log('redis connected')
+// });
+
 app.listen(port,() =>{
+
     console.log('server started....')
 });
 
