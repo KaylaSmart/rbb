@@ -54,6 +54,16 @@ mongoose.Promise = global.Promise;
 
 
 app.use(bodyParser.urlencoded({extended: true}));
+
+if(process.env.NODE_ENV === 'production'){
+    app.use(express.static('public'));
+
+    const path = require('path');
+    app.get('*', (req, res)=>{
+        res.sendFile(path.resolve(__dirname, 'public', 'app.js'))
+    })
+}
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'))
 app.use(logger("dev"));
@@ -94,7 +104,9 @@ mongoose.set('useCreateIndex', true);
 
 
 
+if(process.env.NODE_ENV === 'production'){
 
+}
 
 
 app.use(function(req,res,next){
