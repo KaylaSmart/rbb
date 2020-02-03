@@ -23,7 +23,7 @@ const path = require('path');
         // seedDB = requre('./seeds');
 const port = process.env.PORT || 5000;
 const router = express.Router();
-var redis = require("redis").createClient();
+
 
 // const databaseUri = process.env.MONGODB_URI || 'mongodb://localhost/app_demo';
 
@@ -95,8 +95,6 @@ app.use('/admin', adminRoutes);
 // client.on('connect', function(){
 //     console.log('redis connected')
 // });
-
-redis.auth(rtg.auth.split(":")[1]);
 
 app.listen(port,() =>{
 
