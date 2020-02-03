@@ -13,6 +13,7 @@ const mongoose = require('mongoose'),
         Blog = require('./models/blog'),
         flash = require('connect-flash'),
         logger = require('morgan');
+        require('dotenv').load();
 
         const store = new MongoDBStore({
             uri: 'mongodb+srv://devsmart:juturna@cluster0-oureg.mongodb.net/test?retryWrites=true&w=majority',
@@ -60,7 +61,7 @@ if(process.env.NODE_ENV === 'production'){
 
     const path = require('path');
     app.get('*', (req, res)=>{
-        res.sendFile(path.resolve(__dirname, 'public', 'app.js'))
+        res.sendFile(path.resolve(__dirname, 'public'))
     })
 }
 
