@@ -44,7 +44,7 @@ router.get("/signup",function(req, res){
  router.post('/signup', (req,res, next) =>{
     // req.body.username
     // req.body.password
-    User.register(new User({username:req.body.username}), req.body.password, async function(err){
+    User.register(new User({username:req.body.username}), req.body.password, function(err){
             if(err){
                 console.log(err);
             }
