@@ -10,8 +10,9 @@ const mongoose = require('mongoose'),
         Blog = require('./models/blog'),
         flash = require('connect-flash'),
         logger = require('morgan'),
-        session = require('express-session'),
-        MongoStore = require('connect-mongo');
+        session = require('express-session');
+
+        const MongoStore = require('connect-mongo')(session);
         
 const fs = require('fs');
 const blogRoutes = require("./routes/blog"),
@@ -90,7 +91,7 @@ mongoose.set('useCreateIndex', true);
  
 app.use(session({
     secret: 'foo',
-    store: new MongoStore('mongodb+srv://devsmart:juturna@cluster0-oureg.mongodb.net/test?retryWrites=true&w=majority')
+    store: new MongoStore({url:'mongodb+srv://devsmart:juturna@cluster0-oureg.mongodb.net/test?retryWrites=true&w=majority'})
 }));
 
 app.use('/', indexRoutes);
