@@ -41,15 +41,13 @@ router.get("/signup",function(req, res){
  });
 
 //handle signup logic
- router.post('/signup', async (req,res) =>{
-   const user = User.register(new User({username:req.body.username}), req.body.password, async function(err){
-         await passport.authenticate("local")(req, res, function(){
+ router.post('/signup', (req,res) =>{
+   const user = new User({username: 'user'});
+    User.register(new User({username:req.body.username}), req.body.password,  function(err){
+            await passport.authenticate("local")(req, res, function(){
                 res.send("you have signed up!"); 
-                   await user.setPassword('password');
-                     await user.save();
              });
         });
-     
 });
 
 
