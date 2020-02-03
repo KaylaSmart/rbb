@@ -21,7 +21,7 @@ const blogRoutes = require("./routes/blog"),
 const path = require('path');
 
         // seedDB = requre('./seeds');
-// const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5000;
 const router = express.Router();
 
 
