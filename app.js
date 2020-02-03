@@ -89,7 +89,8 @@ mongoose.set('useCreateIndex', true);
 // mongoose.connect(connectionOptions);
  
 app.use(session({
-    store: new MongoStore({ mongooseConnection: mongoose.connection })
+    secret: 'foo',
+    store: new MongoStore(options)
 }));
 
 app.use('/', indexRoutes);
