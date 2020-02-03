@@ -44,7 +44,7 @@ router.get("/signup",function(req, res){
  router.post('/signup', (req,res) =>{
    const user = new User({username: 'user'});
     User.register(new User({username:req.body.username}), req.body.password,  function(err){
-            await passport.authenticate("local")(req, res, function(){
+         passport.authenticate("local")(req, res, function(){
                 res.send("you have signed up!"); 
              });
         });
