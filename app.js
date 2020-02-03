@@ -15,6 +15,17 @@ const mongoose = require('mongoose'),
         logger = require('morgan');
         // require('dotenv').load();
 
+    mongoose.connect('mongodb+srv://devsmart:juturna@cluster0-oureg.mongodb.net/test?retryWrites=true&w=majority', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+    }).then(() => {
+        console.log('Connected to DB!');
+    }).catch(err => {
+         console.log('ERROR', err.message);     
+    });
+    mongoose.Promise = global.Promise;
+
+    mongoose.set('useCreateIndex', true);
         const store = new MongoDBStore({
             uri: 'mongodb+srv://devsmart:juturna@cluster0-oureg.mongodb.net/test?retryWrites=true&w=majority',
             collection: 'mySessions'
@@ -37,10 +48,10 @@ const router = express.Router();
 
 
 // const databaseUri = process.env.MONGODB_URI || 'mongodb://localhost/app_demo';
-
+//
+//REDIS REDIS
 const redis = require('redis');
 let redisClient ;
-
 
 if(process.env.REDIS_URL){
     redisClient = redis.createClient(process.env.REDIS_URL);
@@ -51,7 +62,7 @@ if(process.env.REDIS_URL){
 
 
 // mongoose.connect('mongodb://localhost/app_demo');
-mongoose.Promise = global.Promise;
+
 
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -92,22 +103,8 @@ app.use(require('express-session')({
 }));
 
 
-mongoose.connect('mongodb+srv://devsmart:juturna@cluster0-oureg.mongodb.net/test?retryWrites=true&w=majority', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}).then(() => {
-    console.log('Connected to DB!');
-}).catch(err => {
-   console.log('ERROR', err.message); 
-});
-
-mongoose.set('useCreateIndex', true);
 
 
-
-if(process.env.NODE_ENV === 'production'){
-
-}
 
 
 app.use(function(req,res,next){
