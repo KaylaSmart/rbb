@@ -86,7 +86,7 @@ mongoose.connect('mongodb+srv://devsmart:juturna@cluster0-oureg.mongodb.net/test
 mongoose.set('useCreateIndex', true);
 
 
-mongoose.connect(connectionOptions);
+// mongoose.connect(connectionOptions);
  
 app.use(session({
     store: new MongoStore({ mongooseConnection: mongoose.connection })
