@@ -12,8 +12,8 @@ const mongoose = require('mongoose'),
         logger = require('morgan'),
         session = require('express-session');
 
-        const MongoStore = mongoose.connect(session);
-        
+        const MongoStore = require('connect-mongo')(session);
+        var client = require('redis').createClient(process.env.REDIS_URL);
 const fs = require('fs');
 const blogRoutes = require("./routes/blog"),
     indexRoutes = require("./routes/index"),
