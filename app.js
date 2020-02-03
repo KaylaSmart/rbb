@@ -12,7 +12,7 @@ const mongoose = require('mongoose'),
         logger = require('morgan'),
         session = require('express-session');
 
-        const MongoStore = connectMongo(session);
+        const MongoStore = mongoose.connect(session);
         
 const fs = require('fs');
 const blogRoutes = require("./routes/blog"),
