@@ -34,7 +34,7 @@ const mongoose = require('mongoose'),
           });
 
 
-const client = require('redis').createClient(process.env.REDIS_URL);
+// const client = require('redis').createClient(process.env.REDIS_URL);
 const fs = require('fs');
 const blogRoutes = require("./routes/blog"),
     indexRoutes = require("./routes/index"),
