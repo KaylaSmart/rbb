@@ -67,13 +67,14 @@ const redis = require('redis')
 let RedisStore = require('connect-redis')(session)
 let redisClient = redis.createClient()
 
-app.use(
-  session({
-    store: new RedisStore({ client: redisClient }),
-    secret: 'keyboard cat',
-    resave: false,
-  })
-)
+// app.use(
+//   session({
+//     store: new RedisStore({ client: redisClient }),
+//     secret: 'keyboard cat',
+//     resave: false,
+//     saveUninitialized: false 
+//   })
+// )
 
 // mongoose.connect('mongodb://localhost/app_demo');
 
@@ -112,7 +113,7 @@ app.use(passport.session());
 app.use(require('express-session')({
     secret: "Gleemer Slaps so Dang hard",
     resave: false,
-    store: store,
+    store: new RedisStore({ client: redisClient }),
     saveUninitialized: false
 }));
 
