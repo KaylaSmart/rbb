@@ -15,7 +15,7 @@ const mongoose = require('mongoose'),
         logger = require('morgan');
         // require('dotenv').load();
 
-    mongoose.connect(process.env.MONGODB_URI , {
+    mongoose.connect('mongodb://heroku_xpflmzb1:ddpf9gd8uskf0qhob8lp97m1o3@ds049467.mlab.com:49467/heroku_xpflmzb1', {
     useNewUrlParser: true,
     useUnifiedTopology: true
     }).then(() => {
