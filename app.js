@@ -51,16 +51,29 @@ const router = express.Router();
 // const databaseUri = process.env.MONGODB_URI || 'mongodb://localhost/app_demo';
 //
 //REDIS REDIS
-const redis = require('redis');
-let redisClient ;
+// const redis = require('redis');
+// const redisClient = redis.createClient(process.env.REDIS_URL);
 
-if(process.env.REDIS_URL){
-    redisClient = redis.createClient(process.env.REDIS_URL);
+// if(process.env.REDIS_URL){
+//     redisClient = redis.createClient(process.env.REDIS_URL);
     
-}else{
- redisClient.createClient();  
-}
+// }else{
+//  redisClient.createClient("localhost");  
+// }
 
+const redis = require('redis')
+// const session = require('express-session')
+
+let RedisStore = require('connect-redis')(session)
+let redisClient = redis.createClient()
+
+app.use(
+  session({
+    store: new RedisStore({ client: redisClient }),
+    secret: 'keyboard cat',
+    resave: false,
+  })
+)
 
 // mongoose.connect('mongodb://localhost/app_demo');
 
