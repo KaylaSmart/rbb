@@ -25,7 +25,7 @@ const mongoose = require('mongoose'),
     });
     mongoose.Promise = global.Promise;
 
-    mongoose.set('useCreateIndex', true);
+    // mongoose.set('useCreateIndex', true, );
 
         const store = new MongoDBStore({
             uri: 'mongodb://heroku_xpflmzb1:ddpf9gd8uskf0qhob8lp97m1o3@ds049467.mlab.com:49467/heroku_xpflmzb1',
@@ -45,7 +45,7 @@ const blogRoutes = require("./routes/blog"),
 const path = require('path');
 
         // seedDB = requre('./seeds');
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5001;
 const router = express.Router();
 
 
@@ -68,6 +68,10 @@ const redis = require('redis')
 let RedisStore = require('connect-redis')(session)
 let redisClient = redis.createClient()
 
+
+redisClient.on('connect', function(){
+    console.log('Connected to Redis...');
+  });
 // app.use(
 //   session({
 //     store: new RedisStore({ client: redisClient }),
