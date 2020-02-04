@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,12 +27,6 @@
         font-family: sans-serif;
         color: #ffff;
     }
-
-    @media only screen and (max-width:768px){
-  [class*="col-"]{
-    width: 100%;
-  }
-}
     
     #logo a{
         text-decoration: none;
@@ -137,11 +132,9 @@
         </div>
 </div>
 
-<div class="container-fluid h-20">
-    <h3></h3>
-</div>
+
   
-     <div class="container-fluid shadow color-change-5x  text-center"id="sign">
+     <div class="container-fluid shadow color-change-5x  text-center d-none d-sm-none d-md-block d-lg-block d-xl-block " id="sign">
         <div class="row px-5 py-5 justify-content-center align-items-center">
             <div class="col-6 .bg-pan-top mx-5 mx-5  ">
             <form action="/signup" method="POST" >
@@ -164,11 +157,36 @@
     </div>
 </div>
 
-        <div class="container-fluid  "id="sign">
+
+
+        <div class="container-fluid d-none d-sm-none d-md-block d-lg-block d-xl-block "id="sign">
             <div class="row justify-content-center align-items-center ">
                 <div class="col-6  ">
                <img src="./images/71FA2A8C-46E5-4966-86B9-D87F8A6546D9.png" alt="">
             </div>        
+        </div>
+        </div>
+
+        <div class="container-fluid  d-sm-block d-md-none d-lg-none d-xl-none shadow color-change-5x  h-100 text-center">
+          <div class="row px-5 py-5 justify-content-center align-items-center">
+              <div class="col  mx-5 mx-5  ">
+              <form action="/signup" method="POST" >
+                <h1 class="title">Sign Up</h1>
+                <div class="field">
+                  <label class="label">Email</label>
+                  <input required class="input" name="username" type="text" placeholder="Email"  />
+                  <!-- <p class="help is-danger">${getError(errors, 'email')}</p> -->
+                </div>
+                <div class="field">
+                  <label class="label">Password</label>
+                  <input required class="input" placeholder="Password" name="password" type="password" />
+                  <!-- <p class="help is-danger">${getError(errors, 'password')}</p> -->
+                </div>
+                <button class="button is-primary">Submit</button>
+              </form>
+  
+            <!-- </div> -->
+          </div>    
         </div>
         </div>
 
