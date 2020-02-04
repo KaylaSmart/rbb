@@ -6,6 +6,12 @@ html,body{
     color: #ffff;
 }
 
+@media only screen and (max-width:768px){
+  [class*="col-"]{
+    width: 100%;
+  }
+}
+
 #logo a{
     text-decoration: none;
     font-weight: bolder;
