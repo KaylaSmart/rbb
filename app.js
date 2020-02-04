@@ -1,9 +1,9 @@
 const express = require('express');     
 const session = require('express-session');
-const MongoDBStore = require('connect-mongodb-session')(session);
 
+const MongoDBStore = require('connect-mongodb-session')(session);
 const mongoose = require('mongoose'),
-    methodOverride = require('method-override'),
+     methodOverride = require('method-override'),
         app = express(),
         passport = require('passport'),
         bodyParser = require('body-parser'),
@@ -13,9 +13,31 @@ const mongoose = require('mongoose'),
         Blog = require('./models/blog'),
         flash = require('connect-flash'),
         logger = require('morgan');
-        // require('dotenv').load();
+   
+const store = new MongoDBStore({
+        uri: 'mongodb://heroku_xpflmzb1:ddpf9gd8uskf0qhob8lp97m1o3@ds049467.mlab.com:49467/heroku_xpflmzb1',
+        collection: 'mySessions',   
+        useUnifiedTopology: true 
+});
 
-    mongoose.connect('mongodb://heroku_xpflmzb1:ddpf9gd8uskf0qhob8lp97m1o3@ds049467.mlab.com:49467/heroku_xpflmzb1', {
+
+// app.use(
+//   session({
+//     store: store,
+//     secret: 'keyboard cat',
+//     resave: false,
+//     saveUninitialized: false 
+//   })
+// )
+const blogRoutes = require("./routes/blog"),
+    indexRoutes = require("./routes/index"),
+    adminRoutes = require("./routes/admin");
+
+const path = require('path');
+
+const port = process.env.PORT || 5000;
+
+mongoose.connect('mongodb://heroku_xpflmzb1:ddpf9gd8uskf0qhob8lp97m1o3@ds049467.mlab.com:49467/heroku_xpflmzb1', {
     useNewUrlParser: true,
     useUnifiedTopology: true
     }).then(() => {
@@ -25,29 +47,82 @@ const mongoose = require('mongoose'),
     });
     mongoose.Promise = global.Promise;
 
-    // mongoose.set('useCreateIndex', true, );
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'))
+app.use(logger("dev"));
 
-        const store = new MongoDBStore({
-            uri: 'mongodb://heroku_xpflmzb1:ddpf9gd8uskf0qhob8lp97m1o3@ds049467.mlab.com:49467/heroku_xpflmzb1',
-            collection: 'mySessions',  
-            useUnifiedTopology: true
-          });
+app.engine('ejs', require('ejs').renderFile);
+app.set('view engine', 'ejs');
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(require('express-session')({
+    secret: "Gleemer Slaps so Dang hard",
+    resave: false,
+    store: store,
+    saveUninitialized: false
+}));
+
+app.use(function(req,res,next){
+    res.locals.currentUser = req.user;
+    next();
+});
+
+passport.use(User.createStrategy());
+passport.serializeUser(User.serializeUser());//encode
+passport.deserializeUser(User.deserializeUser());//unencode
+
+ 
+app.use('/', indexRoutes);
+app.use('/blogs', blogRoutes);
+app.use('/admin', adminRoutes);
+// app.use("/admin/:id/post", postRoutes);
 
 
-// const client = require('redis').createClient(process.env.REDIS_URL);
-const fs = require('fs');
-const blogRoutes = require("./routes/blog"),
-    indexRoutes = require("./routes/index"),
-    adminRoutes = require("./routes/admin");
-    //  db = require('../models');
-    
-// const redis = require('redis').createClient();
-const path = require('path');
+app.listen(port,() =>{
+ console.log('server started....')
+});
 
-        // seedDB = requre('./seeds');
-const port = process.env.PORT || 5001;
-const router = express.Router();
 
+
+
+
+
+
+
+
+// app.use(
+//   session({
+//     store: new RedisStore({ client: redisClient }),
+//     secret: 'keyboard cat',
+//     resave: false,
+//     saveUninitialized: false 
+//   })
+// )
+
+// mongoose.connect('mongodb://localhost/app_demo');
+
+
+   
+//   store.on('error', function(error) {
+//     console.log(error);
+//   });
+   
+// mongoose.connect(databaseUri, { useUnifiedTopology: true, useNewUrlParser: true })
+//       .then(() => console.log(`Database connected`))
+//       .catch(err => console.log(`Database connection error: ${err.message}`));    
+
+
+// if(process.env.NODE_ENV === 'production'){
+//     app.use(express.static('public'));
+
+//     const path = require('path');
+//     app.get('*', (req, res)=>{
+//         res.sendFile(path.resolve(__dirname, 'public'))
+//     })
+// }
 
 // const databaseUri = process.env.MONGODB_URI || 'mongodb://localhost/app_demo';
 //
@@ -62,92 +137,21 @@ const router = express.Router();
 //  redisClient.createClient("localhost");  
 // }
 
-const redis = require('redis')
-// const session = require('express-session')
+// const redis = require('redis')
+// // const session = require('express-session')
 
-let RedisStore = require('connect-redis')(session)
-let redisClient = redis.createClient()
+// let RedisStore = require('connect-redis')(session)
+// let redisClient = redis.createClient()
 
+// const client = require('redis').createClient(process.env.REDIS_URL);
 
-redisClient.on('connect', function(){
-    console.log('Connected to Redis...');
-  });
-// app.use(
-//   session({
-//     store: new RedisStore({ client: redisClient }),
-//     secret: 'keyboard cat',
-//     resave: false,
-//     saveUninitialized: false 
-//   })
-// )
-
-// mongoose.connect('mongodb://localhost/app_demo');
+    // mongoose.set('useCreateIndex', true, );
 
 
+        //  db = require('../models');
+    
+// const redis = require('redis').createClient();
 
-app.use(bodyParser.urlencoded({extended: true}));
-
-if(process.env.NODE_ENV === 'production'){
-    app.use(express.static('public'));
-
-    const path = require('path');
-    app.get('*', (req, res)=>{
-        res.sendFile(path.resolve(__dirname, 'public'))
-    })
-}
-
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(methodOverride('_method'))
-app.use(logger("dev"));
-// mongoose.connect(databaseUri, { useUnifiedTopology: true, useNewUrlParser: true })
-//       .then(() => console.log(`Database connected`))
-//       .catch(err => console.log(`Database connection error: ${err.message}`));    
-app.engine('ejs', require('ejs').renderFile);
-app.set('view engine', 'ejs');
-app.use(flash());
-app.use(passport.initialize());
-app.use(passport.session());
-
-
-   
-  store.on('error', function(error) {
-    console.log(error);
-  });
-   
-
-app.use(require('express-session')({
-    secret: "Gleemer Slaps so Dang hard",
-    resave: false,
-    store: new RedisStore({ client: redisClient }),
-    saveUninitialized: false
-}));
-
-
-
-
-
-
-app.use(function(req,res,next){
-    res.locals.currentUser = req.user;
-    next();
-});
-
-passport.use(User.createStrategy());
-passport.serializeUser(User.serializeUser());//encode
-passport.deserializeUser(User.deserializeUser());//unencode
-
- 
-
-app.use('/', indexRoutes);
-app.use('/blogs', blogRoutes);
-app.use('/admin', adminRoutes);
-// app.use("/admin/:id/post", postRoutes);
-
-
-
-
-app.listen(port,() =>{
-
-    console.log('server started....')
-});
-
+// redisClient.on('connect', function(){
+//     console.log('Connected to Redis...');
+//   });
