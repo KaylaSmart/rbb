@@ -15,7 +15,7 @@ const mongoose = require('mongoose'),
         logger = require('morgan');
         // require('dotenv').load();
 
-    mongoose.connect('mongodb+srv://devsmart:juturna@cluster0-oureg.mongodb.net/test?retryWrites=true&w=majority', {
+    mongoose.connect(process.env.MONGODB_URI , {
     useNewUrlParser: true,
     useUnifiedTopology: true
     }).then(() => {
@@ -26,8 +26,9 @@ const mongoose = require('mongoose'),
     mongoose.Promise = global.Promise;
 
     mongoose.set('useCreateIndex', true);
+
         const store = new MongoDBStore({
-            uri: 'mongodb+srv://devsmart:juturna@cluster0-oureg.mongodb.net/test?retryWrites=true&w=majority',
+            uri: 'mongodb://heroku_xpflmzb1:ddpf9gd8uskf0qhob8lp97m1o3@ds049467.mlab.com:49467/heroku_xpflmzb1',
             collection: 'mySessions'
           });
 
