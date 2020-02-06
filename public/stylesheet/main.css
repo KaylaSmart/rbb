@@ -33,6 +33,9 @@
   height: 10% !important;
   overflow: hidden;
 }
+[id*="mainnav"]{
+  display: none;
+}
 }
 
 .girl{
