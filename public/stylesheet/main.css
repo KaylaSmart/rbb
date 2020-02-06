@@ -31,16 +31,15 @@
 [class*="girl"]{
   opacity: 20%;
   height: 10% !important;
-  overflow: hidden;
+
+
 }
 [id*="mainnav"]{
   display: none;
 }
 }
 
-.girl{
-  overflow:hidden ;
-}
+
 
 html, body{ 
   height: 100%;
@@ -135,7 +134,6 @@ hr{
 #girl, img{
   position: inherit;
   height: 400px;
-  overflow: hidden;
 }
 
 .two {
@@ -147,7 +145,6 @@ hr{
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vw), 0 100%);
   /* margin-bottom: -10vw; */
   box-shadow:  0 0 12 33rem rgba(0, 0, 0, .5);  
-  overflow: hidden;
   background-position-y: -8%;
 }
 .two ::before{
