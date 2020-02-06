@@ -27,9 +27,12 @@
     <!-- logo top -->
     <div class="container-fluid  text-center py-2" id="topnav">
             <div class="row ">
-                <div class="col-2 pt-1 justify-content-start text-center">
-                    <span onclick="openNav()"><i class="fa fa-bars mx-1 " style="font-size:20px"></i></span>
-                </div>
+                <div class="col-2 pt-1 justify-content-start text-center" >
+                    <span onclick="openNav()">
+                       <i class="fa fa-bars mx-1 " style="font-size:20px">
+                      </i>
+                    </span>
+                    </div>
                 <div class="col-8 text-center">
                     <a href="" class="blog-header-logo">RED BOTTOM BRUNCH</a>
                 </div>
@@ -42,29 +45,28 @@
 </div> 
 
 
-<div class="container-fluid d-none d-sm-none d-md-block d-lg-inline">
   <nav class="navbar navbar-expand navbar-light mt-0" id="mainnav">
       <div class="collapse navbar-collapse justify-content-center" >
         <ul class="navbar-nav justify-content-between ">
-          <li class="nav-item px-5">
-            <a class="nav-link" href="#">HOME</a>
-          </li>
-          <li class="nav-item px-5">
-            <a class="nav-link" href="#">ABOUT</a>
-          </li>
-          <li class="nav-item px-5">
-              <a class="nav-link ">BLOG</a>
-          </li>
-          <li class="nav-item px-5">
-              <a class="nav-link ">POD</a>
-          </li>
-          <li class="nav-item px-5">
-              <a class="nav-link ">THE GALS</a>
-          </li>
+            <li class="nav-item px-5">
+                <a class="nav-link" href="/">HOME</a>
+              </li>
+              <li class="nav-item px-5">
+                <a class="nav-link" href="/about">ABOUT</a>
+              </li>
+              <li class="nav-item px-5">
+                  <a class="nav-link " href="/blog">BLOG</a>  
+              </li>
+              <li class="nav-item px-5">
+                  <a class="nav-link " href="/podcast">POD</a>
+              </li>
+              <li class="nav-item px-5">
+                  <a class="nav-link " href="/about#thegals">THE GALS</a>
+              </li>
         </ul>
       </div>
     </nav>
-</div>
+
 <div id="myNav" class="overlay">
 
   <!-- Button to close the overlay navigation -->
@@ -73,11 +75,11 @@
 
   <!-- Overlay content -->
   <div class="overlay-content">
-    <a href="./home.html">HOME</a>
-    <a href="./aboutgals.html">ABOUT</a>
-    <a href="./blogfeed.html">BLOG</a>
-    <a href="./podcast.html">POD</a>
-    <a href="./aboutgals.html#thegals">THE GALS</a>
+    <a href="/">HOME</a>
+    <a href="/about">ABOUT</a>
+    <a href="/blogs">BLOG</a>
+    <a href="/popcast">POD</a>
+    <a href="/about#thegals">THE GALS</a>
 
   </div>
 
@@ -118,7 +120,7 @@
     <div class=" container text-center middle ">
     </div>
     <section>
-    <div class="container-fluid thegals py-3 h-100 ">
+    <div class="container-fluid thegals py-3 h-100 " id="thegals">
     <div class="row my-5 mx-5 align-items-center overflow-hidden d-md-flex flex-md-equal "  data-aos="fade-right">
         <div class="col-md-4  text-center  d-none d-md-block ">
             <br class="mb-3 d-md-none d-lg-none d-xl-none">
@@ -160,10 +162,10 @@
             <div>
                 <h4 class="d-block d-sm-block d-md-none text-center ">HON.E</h4>
             </div>
-            <p data-aos="fade-right"> A mental health advocate and self-described Eggs Benedict connoisseur with a love of traveling. Hon.E has a “you gotta do what you gotta do” type attitude but enjoys her downtime when she’s not hustling and bustling. In her spare time, Hon.E likes writing scripts/poems/blogs,checking out interesting spots in Philadelphia, and target shooting with her brother (she’s a pretty good shot!) Keep up with Hon.E
+            <p data-aos="fade-left"> A mental health advocate and self-described Eggs Benedict connoisseur with a love of traveling. Hon.E has a “you gotta do what you gotta do” type attitude but enjoys her downtime when she’s not hustling and bustling. In her spare time, Hon.E likes writing scripts/poems/blogs,checking out interesting spots in Philadelphia, and target shooting with her brother (she’s a pretty good shot!) Keep up with Hon.E
                 on Instagram @hon.e.bunch and check out her blog at honeyscorner.com! </p>
                 <div class="container text-center">
-                    <a href="" class="btn instabtn" data-aos="fade-right">@hon.e.bunch</a>
+                    <a href="" class="btn instabtn" data-aos="fade-left">@hon.e.bunch</a>
                 </div>
         </div>
      </div>
@@ -185,6 +187,15 @@
     <script>
       AOS.init();
     </script>
+        <script>
+            function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+          }
+          
+          /* Close when someone clicks on the "x" symbol inside the overlay */
+          function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+          }</script>
   </body>
 </html>
 
