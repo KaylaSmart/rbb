@@ -30,7 +30,7 @@
 }
 [class*="girl"]{
   opacity: 20%;
-  height: 10% !important;
+  height: 4% !important;
 
 
 }
@@ -107,6 +107,12 @@ hr{
 /*  */
 
 
+.redb{
+  margin-left: 30%;
+  align-self: center;
+  height: 2100% !important;
+}
+
 /* HEADER START */
  #featured{
   background-color: white;
@@ -133,11 +139,16 @@ hr{
 
 #girl, img{
   position: inherit;
-  height: 400px;
+
+}
+
+ a{
+  color:inherit;
+  text-decoration: none;
 }
 
 .readmore{
-  background-color: #e5ccc7;
+  background-color: #e5ccc7 !important;
 }
 .two {
   background:url('./../images/IMG-2607.JPG')  no-repeat center center fixed;
@@ -253,6 +264,7 @@ h3{
   overflow: hidden;
 
 }
+
 
 
 a{
