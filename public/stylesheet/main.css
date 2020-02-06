@@ -136,6 +136,9 @@ hr{
   height: 400px;
 }
 
+.readmore{
+  background-color: #e5ccc7;
+}
 .two {
   background:url('./../images/IMG-2607.JPG')  no-repeat center center fixed;
   /* background:url('./images/IMG-2608.JPG')  no-repeat center center fixed; */
