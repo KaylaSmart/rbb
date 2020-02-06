@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8" />    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/stylesheet/main.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <script src="./home.js"></script>
+    <!-- <script src="./home.js"></script> -->
   
     <title>RBB</title>
   </head>
@@ -45,7 +45,7 @@
 </div> 
 
 
-<div class="container-fluid d-none d-sm-none d-md-block d-lg-inline">
+
   <nav class="navbar navbar-expand navbar-light mt-0" id="mainnav">
       <div class="collapse navbar-collapse justify-content-center" >
         <ul class="navbar-nav justify-content-between ">
@@ -67,7 +67,8 @@
         </ul>
       </div>
     </nav>
-</div>
+
+
 <div id="myNav" class="overlay">
 
   <!-- Button to close the overlay navigation -->
@@ -269,5 +270,14 @@
     <script>
       AOS.init();
     </script>
+    <script>
+    function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+  }
+  
+  /* Close when someone clicks on the "x" symbol inside the overlay */
+  function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+  }</script>
   </body>
 </html>

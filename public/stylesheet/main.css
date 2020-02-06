@@ -134,7 +134,7 @@ hr{
   /* margin-bottom: -10vw; */
   box-shadow:  0 0 12 33rem rgba(0, 0, 0, .5);  
   overflow: hidden;
-
+  background-position-y: -8%;
 }
 .two ::before{
   background: #FF6B6C;
