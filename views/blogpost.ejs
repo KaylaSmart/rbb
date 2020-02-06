@@ -1,4 +1,92 @@
-<% include ../partials/header %>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/tex-gyre-adventor" type="text/css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+    <link rel="manifest" href="./images/site.webmanifest">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8" />    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheet/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- <script src="./home.js"></script> -->
+  
+    <title>RBB</title>
+  </head>
+  
+     <body>
+
+    <!-- logo top -->
+    <div class="container-fluid  text-center py-2 " id="topnav">
+            <div class="row ">
+                <div class="col-2 pt-1 justify-content-start text-center py-2" >
+                <span onclick="openNav()">
+                   <i class="fa fa-bars mx-1 " style="font-size:20px">
+                  </i>
+                </span>
+                 
+                </div>
+                <div class="col-8 text-center">
+                    <a href="" class="blog-header-logo">RED BOTTOM BRUNCH</a>
+                </div>
+                <div class="col-2 justify-content-end align-items-center py-2">
+                    <i class="fa fa-instagram px-3" aria-hidden="true"></i>
+                    <i class="fa fa-apple px-3" aria-hidden="true"></i>
+                    <i class="fa fa-spotify px-3" aria-hidden="true"></i>
+                </div>
+            </div>
+</div> 
+
+
+
+  <nav class="navbar navbar-expand navbar-light mt-0  " id="mainnav">
+      <div class="collapse navbar-collapse justify-content-center" >
+        <ul class="navbar-nav justify-content-between ">
+          <li class="nav-item px-5">
+            <a class="nav-link" href="/">HOME</a>
+          </li>
+          <li class="nav-item px-5">
+            <a class="nav-link" href="/about">ABOUT</a>
+          </li>
+          <li class="nav-item px-5">
+              <a class="nav-link " href="/blog">BLOG</a>  
+          </li>
+          <li class="nav-item px-5">
+              <a class="nav-link " href="/podcast">POD</a>
+          </li>
+          <li class="nav-item px-5">
+              <a class="nav-link " href="/about#thegals">THE GALS</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+<div id="myNav" class="overlay">
+
+  <!-- Button to close the overlay navigation -->
+
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+  <!-- Overlay content -->
+  <div class="overlay-content">
+    <a href="/">HOME</a>
+    <a href="/about">ABOUT</a>
+    <a href="/blogs">BLOG</a>
+    <a href="/popcast">POD</a>
+    <a href="/about#thegals">THE GALS</a>
+
+  </div>
+
+</div>
 <hr>
 <div class="container-fluid">
     <div class="container d-flex">
@@ -59,4 +147,55 @@
 </div>
 </div>
 
-<% include ../partials/footer %>
+<footer class="footer text-center ">
+  <div class="">
+    <p class="mb-0" >RED BOTTOM BRUNCH     2020</p>
+  </div>
+</footer>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<script>
+function openNav() {
+document.getElementById("myNav").style.width = "100%";
+}
+
+/* Close when someone clicks on the "x" symbol inside the overlay */
+function closeNav() {
+document.getElementById("myNav").style.width = "0%";
+}
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+if (event.target == modal) {
+modal.style.display = "none";
+}
+}
+</script>
+</body>
+</html>
