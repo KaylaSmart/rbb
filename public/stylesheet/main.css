@@ -14,15 +14,29 @@
     width: 100%;
   }
   [class*="two"] {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    background-size:130% !important;
-    background:url('./../images/IMG-2607.JPG')  no-repeat center center fixed;
+    margin-top: 50 !important;
+    margin-bottom: 50 !important;
+    /* background-size:125% !important; */
+    padding-right: 10%;
+    padding-left: 10%;
+    background-position-y: 50% !important;
+    background:url('./../images/IMG-2607.JPG')  ;
+    background-repeat:no-repeat;
     
+    background-size:100% !important;
+
 }
 [class*="xoxo"]{
   font-size: 2.5rem !important;
 }
+[class*="divider"]{
+
+background-color: #ebaae52c;
+height: 10%;
+width: 100%;
+
+}
+
 [class*="socials"]{
   height: 30% !important;
   font-weight: 800;
@@ -31,12 +45,17 @@
 [class*="girl"]{
   opacity: 20%;
   height: 4% !important;
-
-
 }
 [id*="mainnav"]{
   display: none;
+
 }
+[id*="topnav"]{
+position: fixed;
+z-index: 8000;
+
+}
+
 }
 
 
