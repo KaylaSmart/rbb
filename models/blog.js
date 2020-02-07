@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 const blogSchema = new mongoose.Schema({
     title: String,
-    image: String,
+    image:     { data: Buffer, contentType: String },
     description: String,
     article: String,
     createdAt: {type: Date, default: Date.now },
@@ -20,8 +20,6 @@ const Blog = module.exports = mongoose.model("Blog", blogSchema);
 module.exports.getBlogs = function (callback, limit) {
     Blog.find(callback).limit(limit);
 }
-
-
 
 
 // Get Blog

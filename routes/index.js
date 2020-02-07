@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const User = require('../models/user');
+const multer = require('multer');
 
 //index
 router.get('/', function(req, res){
@@ -26,12 +27,11 @@ router.get('/blog', function(req, res){
 });
 
 
-// //ADMIN ROUTES
-// //=================
-// //SHOW ADMIN PANNEL
-// router.get('/admin', function(req, res ){
-//     res.render('adminpannel')
-// });
+router.get('/secret', function(req, res){
+    res.render('secret');
+});
+
+
 
 
 //SHOW SIGNUP FORM

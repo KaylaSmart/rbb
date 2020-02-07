@@ -1,10 +1,12 @@
 const express = require('express');
+const fs = require('fs');
 const router = express.Router();
 const Blog = require('../models/blog');
 const {isLoggedIn, checkUserBlog} = require('../middleware/index');
 // const middle = require('../middleware/routehandler');
 // const buffer = Buffer.from('',10);
-// const multer = require('multer');
+const multer = require('multer');
+const upload = multer({ storage: multer.memoryStorage() });
 
 
 
@@ -17,7 +19,7 @@ router.get("/", function(req, res){
              console.log(err);
          } else {
             if(req.xhr) {
-              res.json(allBlosg);
+              res.json(allBlogs);
             } else {
               res.render("admin",{blogs: allBlogs, page: 'admin'});
             }
@@ -25,20 +27,26 @@ router.get("/", function(req, res){
       });
   });
 
+
+
+
+//NEW - show form to create new campground
+router.get("/new", function(req, res){
+   res.render("new"); 
+});
+
 //CREATE - add new Blog to DB
-router.post("/", function(req, res){
-  // get data from form and add to campgrounds array
+router.post("/", upload.single('image') ,function(req, res){
+
   var title = req.body.title;
-  var image = req.body.image;
   var desc = req.body.description;
-  var author = req.body.author
+  var author = req.body.author;
   var article = req.body.article;
-  var newBlog = {title: title, image: image, description: desc, author:author, article:article};
-    // Create a new campground and save to DB
+  var newBlog = {title: title, description: desc, author:author, article:article};
+
+  // Create a new campground and save to DB
     Blog.create(newBlog, function(err){
-      if(req.file){
-        image = req.file.buffer.toString('base64');
-      }else if(err){
+       if(err){
             console.log(err);
         } else {
             //redirect back to campgrounds page
@@ -46,12 +54,9 @@ router.post("/", function(req, res){
             res.redirect("admin");
         }
     });
-});
+  });
 
-//NEW - show form to create new campground
-router.get("/new", function(req, res){
-   res.render("new"); 
-});
+
 
 // SHOW - shows more info about one campground-COME BACK FOR THIS!!!
 router.get("/:id", function(req, res){

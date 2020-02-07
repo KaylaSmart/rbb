@@ -1,5 +1,6 @@
 const express = require('express');     
 const session = require('express-session');
+const  fs = require('fs');
 
 const MongoDBStore = require('connect-mongodb-session')(session);
 const mongoose = require('mongoose'),
@@ -13,6 +14,9 @@ const mongoose = require('mongoose'),
         Blog = require('./models/blog'),
         flash = require('connect-flash'),
         logger = require('morgan');
+        const multer = require('multer');
+        const GridFsStorage = require("multer-gridfs-storage");
+const Grid = require("gridfs-stream");
    
 const store = new MongoDBStore({
         uri: 'mongodb://heroku_xpflmzb1:ddpf9gd8uskf0qhob8lp97m1o3@ds049467.mlab.com:49467/heroku_xpflmzb1',
@@ -37,6 +41,9 @@ const path = require('path');
 
 const port = process.env.PORT || 5000;
 
+const mongoURI = 'mongodb://heroku_xpflmzb1:ddpf9gd8uskf0qhob8lp97m1o3@ds049467.mlab.com:49467/heroku_xpflmzb1';
+
+
 mongoose.connect('mongodb://heroku_xpflmzb1:ddpf9gd8uskf0qhob8lp97m1o3@ds049467.mlab.com:49467/heroku_xpflmzb1', {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -45,7 +52,11 @@ mongoose.connect('mongodb://heroku_xpflmzb1:ddpf9gd8uskf0qhob8lp97m1o3@ds049467.
     }).catch(err => {
          console.log('ERROR', err.message);     
     });
-    mongoose.Promise = global.Promise;
+
+mongoose.Promise = global.Promise;
+
+mongoose.set('useCreateIndex', true, );
+
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -69,6 +80,8 @@ app.use(function(req,res,next){
     res.locals.currentUser = req.user;
     next();
 });
+
+
 
 passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());//encode
