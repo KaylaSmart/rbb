@@ -70,7 +70,11 @@ z-index: 8000;
     background-size:120% ;
      }
 
-
+    [id*="#girl"]{
+      margin-top: 10%;
+      position: inherit;
+      height:400px;
+    }
 }
 
 
@@ -185,7 +189,7 @@ hr{
 }
 
 #girl, img{
-  margin-top: 0;
+  margin-top: 10%;
   position: inherit;
   height:400px;
 }
