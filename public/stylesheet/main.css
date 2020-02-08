@@ -61,6 +61,13 @@ z-index: 8000;
  margin-top: 30%;
   
   }
+  [class*="podlogotop"]{
+
+    background: url('../images/71FA2A8C-46E5-4966-86B9-D87F8A6546D9.png');
+
+    background-size:120% ;
+     }
+
 
 }
 
