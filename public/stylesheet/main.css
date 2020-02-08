@@ -180,6 +180,10 @@ hr{
   color:white;
   overflow:hidden ;
 }
+.xoxomobile{
+  color:rgb(224, 166, 192) !important;
+  font-size: 3rem !important; 
+}
 
 .mobilexo{
   color: rgb(209, 130, 166);
