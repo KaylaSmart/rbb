@@ -288,8 +288,10 @@ hr{
 .readmore{
   background-color: #e5ccc7 !important;
 }
+
+
 .two {
-  background:url('./../images/IMG-2607.JPG')  no-repeat center center fixed;
+  background:url('../images/IMG-2608.JPG')  no-repeat center center fixed;
   /* background:url('./images/IMG-2608.JPG')  no-repeat center center fixed; */
   background-size: cover;
   position: relative;
