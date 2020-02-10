@@ -79,6 +79,85 @@ z-index: 8000;
 
 
 
+
+
+
+
+@media only screen and (max-width:375px){
+  [class*="col-"]{
+    width: 100%;
+  }
+  [class*="two"] {
+    margin-top: 50 !important;
+    margin-bottom: 50 !important;
+    /* background-size:125% !important; */
+    padding-right: 10%;
+    padding-left: 10%;
+    background-position-y: 50% !important;
+    background:url('./../images/IMG-2607.JPG')  ;
+    background-repeat:no-repeat;
+    
+    background-size:100% !important;
+
+}
+[class*="xoxo"]{
+  font-size: 2.5rem !important;
+  color: #e298B9;
+ 
+}
+[class*="divider"]{
+
+background-color: #ebaae52c;
+height: 10%;
+width: 100%;
+
+}
+
+[class*="socials"]{
+  height: 30% !important;
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+[class*="girl"]{
+  opacity: 20%;
+  height: 4% !important;
+}
+[id*="mainnav"]{
+  display: none;
+
+}
+[id*="topnav"]{
+position: fixed;
+z-index: 8000;
+
+}
+
+[class*="aboutpic"]{
+
+ margin-top: 30%;
+  
+  }
+  [class*="podlogotop"]{
+
+    background: url('../images/71FA2A8C-46E5-4966-86B9-D87F8A6546D9.png');
+
+    background-size:120% ;
+     }
+
+    [id*="#girl"]{
+      margin-top: 10%;
+      position: inherit;
+      height:400px;
+    }
+
+    [class*="razz"]{
+      margin-top: 135% !important;
+   
+    }
+}
+
+
+
 html, body{ 
   height: 100%;
   width:100%;
