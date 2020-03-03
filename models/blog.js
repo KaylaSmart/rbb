@@ -4,7 +4,8 @@ const mongoose = require('mongoose');
 
 const blogSchema = new mongoose.Schema({
     title: String,
-    image:     { data: Buffer, contentType: String },
+    image:     { type: Buffer, required:true },
+    imageType:{ type: String, required:true },
     description: String,
     article: String,
     createdAt: {type: Date, default: Date.now },
@@ -13,7 +14,11 @@ const blogSchema = new mongoose.Schema({
     
 });
 
- 
+blogSchema.virtual('imagePath').get(function() {
+    if (this.image != null && this.imageType != null) {
+      return `data:${this.imageType};charset=utf-8;base64,${this.image.toString('base64')}`
+    }
+  })
 
 const Blog = module.exports = mongoose.model("Blog", blogSchema);
 

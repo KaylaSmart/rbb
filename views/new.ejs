@@ -1,6 +1,8 @@
     
 <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+<link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
 
 <style>
 
@@ -26,7 +28,7 @@
                     </div>
                   </div>
                     <!-- <textarea style="display:none;" type="text" name="article" id="article" cols="30" rows="10"></textarea> -->
-                    <input class="form-control" type="file" name="image" id="image" >
+                    <input class="form-control filepond" type="file" name="image" id="image" >
                     <div class="form-group mt-5">
                     <button class="btn btn-lg btn-primary btn-block">Submit!</button>
                 <a href="admin">Go Back</a>
@@ -65,5 +67,19 @@ var quill = new Quill('#editor-container', {
     }
     
 </script>
+<script src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
+<script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+<script src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
+<script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+<script src="/fileupload.js"></script>
+
+<!-- <script>
+  const inputElement = document.querySelector('input[type="file"]');
+  const pond = FilePond.create( inputElement );
+
+  FilePond.setOptions({
+    server: 'mongodb://heroku_xpflmzb1:ddpf9gd8uskf0qhob8lp97m1o3@ds049467.mlab.com:49467/heroku_xpflmzb1'
+});
 
 
+  </script> -->

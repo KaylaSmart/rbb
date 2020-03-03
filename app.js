@@ -1,7 +1,7 @@
 const express = require('express');     
 const session = require('express-session');
 const  fs = require('fs');
-
+const FilePond = require('filepond');
 const MongoDBStore = require('connect-mongodb-session')(session);
 const mongoose = require('mongoose'),
      methodOverride = require('method-override'),
@@ -14,7 +14,7 @@ const mongoose = require('mongoose'),
         Blog = require('./models/blog'),
         flash = require('connect-flash'),
         logger = require('morgan');
-        const multer = require('multer');
+        // const multer = require('multer');
         const GridFsStorage = require("multer-gridfs-storage");
 const Grid = require("gridfs-stream");
    

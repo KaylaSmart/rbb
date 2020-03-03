@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const User = require('../models/user');
-const multer = require('multer');
+// const multer = require('multer');
 
 //index
 router.get('/', function(req, res){

@@ -5,8 +5,8 @@ const Blog = require('../models/blog');
 const {isLoggedIn, checkUserBlog} = require('../middleware/index');
 // const middle = require('../middleware/routehandler');
 // const buffer = Buffer.from('',10);
-const multer = require('multer');
-const upload = multer({ storage: multer.memoryStorage() });
+const imageMimeTypes = ['image/jpeg', 'image/png', 'images/gif']
+
 
 
 
@@ -36,13 +36,14 @@ router.get("/new", function(req, res){
 });
 
 //CREATE - add new Blog to DB
-router.post("/", upload.single('image') ,function(req, res){
+router.post("/" ,function(req, res){
 
   var title = req.body.title;
   var desc = req.body.description;
   var author = req.body.author;
   var article = req.body.article;
   var newBlog = {title: title, description: desc, author:author, article:article};
+  saveImage(newBlog, req.body.image)
 
   // Create a new campground and save to DB
     Blog.create(newBlog, function(err){
@@ -108,6 +109,20 @@ router.delete("/:id",  function(req, res) {
       }
     })
 });
+
+
+
+
+function saveImage( newBlog , imageEncoded){
+  if(imageEncoded == null) return
+   const image = JSON.parse(imageEncoded)
+  if(image != null && imageMimeTypes.includes(image.type)) {
+    newBlog.image = new Buffer.from(image.data, 'base64')
+    newBlog.imageType = image.type
+  }
+}
+
+
 module.exports = router;
 
 

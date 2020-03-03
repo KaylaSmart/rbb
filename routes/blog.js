@@ -4,7 +4,6 @@ const Blog = require('../models/blog');
 const {isLoggedIn, checkUserBlog} = require('../middleware/index');
 // const middle = require('../middleware/routehandler');
 // const buffer = Buffer.from('',10);
-const multer = require('multer');
 
 
 
@@ -25,7 +24,7 @@ router.get("/",
           res.render("blogs",{blogs: allBlogs, page: 'blogs'});
         }
      }
-});
+})
 });
 
 
