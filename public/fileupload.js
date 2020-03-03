@@ -1,3 +1,24 @@
+const inputElement = document.querySelector('input[type="file"]');
+const pond = FilePond.create( inputElement , {
+
+
+    onaddfile: (err, fileItem) => {
+        console.log(err, fileItem.getMetadata('resize'));
+      },
+       // add onpreparefile callback
+  onpreparefile: (fileItem, output) => {
+    // create a new image object
+    const image = new Image();
+
+    // set the image source to the output of the Image Transform plugin
+    image.src = URL.createObjectURL(output);
+
+    // add it to the DOM so we can see the result
+    document.body.appendChild(image);
+  }
+});
+
+
 FilePond.registerPlugin(
     FilePondPluginImagePreview,
     FilePondPluginImageResize,
@@ -8,11 +29,9 @@ FilePond.setOptions({
     stylePanelAspectRatio: 150/100,
     imageResizeTargetHeight:80,
     imageResizeTargetWidth: 100,
-    allowFileEncode:true,
-    getFileEncodeDataURL:
-    // server: 'mongodb://heroku_xpflmzb1:ddpf9gd8uskf0qhob8lp97m1o3@ds049467.mlab.com:49467/heroku_xpflmzb1'
+    
+     server: './'
 });
 
-getFileEncodeDataURL
 
 FilePond.parse(document.body);
