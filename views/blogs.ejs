@@ -102,146 +102,33 @@ span.onclick = function() {/use.fontawesome.com/releases/v5.12.0/css/v4-shims.cs
             <!-- <div class="overlay"></div> -->
             <div class="col-md=2"></div>
             <div class="col-md"></div>
-            <!-- <div class="row align-items-center justify-content-center" id="feedheader"> 
-              <div class="col-m6">
-                  <img src="./images/71FA2A8C-46E5-4966-86B9-D87F8A6546D9.png" alt="">
-              </div> -->
             </div>
           </div>
          
     </div>
-<div class="container-fluid pt-5 d-md-none d-lg-none d-xl-none ">
-  <div class="col- card-img ">                  
-      <img src="./images/drinks.jpeg" alt="" >
-   </div>
-   <header class="card-header text-center">
-    <div class="card-meta">
-        <h4 class="card-title">Blogs Coming Soon!</h4>
-    </div>
-  </header>
-  <div class="col- card-img ">                  
-    <img src="./images/pinkdrinksplaid.jpg" alt="" >
- </div>
- <header class="card-header text-center">
-  <div class="card-meta">
-      <h4 class="card-title">Blogs Coming Soon!</h4>
-  </div>
-</header>
-<div class="col- card-img ">                  
-  <img src="./images/desertmenu.jpg" alt="" >
-</div>
-<header class="card-header text-center">
-<div class="card-meta">
-    <h4 class="card-title">Blogs Coming Soon!</h4>
-</div>
-</header>
-</div>
 
-         <main class="main  d-none d-sm-none d-md-block d-lg-block ">
-          <div class="container">
-              <div class="row text-center">
-                  <div class="col px-1 py-1 my-1 mx-1">
-
-                      <article class="card mb-4 slide-in-left">
-
-                          <div class="card-img ">
-                         
-                              <img src="./images/drinks.jpeg" alt="" >
  
-                         </div>
-                         <header class="card-header">
-                             <div class="card-meta">
-                                 <h4 class="card-title">Blogs Coming Soon!</h4>
-                             </div>
-                         </header>
-                          <div class="card-body">
-                             <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati!</p> -->
-                          </div>
-                      </article>
-                      <article class="card mb-4 slide-in-left">
-                         <div class="card-img">
-                             <a href="#">
-                                 <img src="./images/desertmenu.jpg" alt="">
-                             </a>
-                         </div>
-                         <header class="card-header">
-                             <div class="card-meta">
-                                 <h4 class="card-title">Blogs Coming Soon!</h4>
-                             </div>
-                         </header>
-                         <div class="card-body">
-                            <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati!</p> -->
-                         </div>
-                     </article>
-                  </div>
-                  <div class="col-md-6 px-1 py-1 my-1 mx-1">
-                     <article class="card mb-4 slide-in-left">
-                         <div class="card-img">
-                             <a href="#">
-                                 <img src="./images/drinkdark.jpeg" alt="">
-                             </a>
-                         </div>
-                         <header class="card-header">
-                             <div class="card-meta">
-                                 <h4 class="card-title">Blogs Coming Soon!</h4>
-                             </div>
-                         </header>
-                         <div class="card-body">
-                            <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati!</p> -->
-                         </div>
-                     </article>
-                     <article class="card mb-4 slide-in-left">
-                     <div class="card-img">
-                         <a href="#">
-                         <img src="./images/pinkdrinksplaid.jpg" alt="">
-                        </a>
-                     </div>
-                     <header class="card-header">
-                         <div class="card-meta">
-                             <h4 class="card-title">Blogs Coming Soon!</h4>
-                         </div>
-                     </header>
-                        <div class="card-body">
-                           <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati!</p> -->
-                        </div>
-                    </article>
-                 </div>
-                 <div class="col px-1 py-1 my-1 mx-1">
-                     <article class="card mb-4 slide-in-left">
-                         <div class="card-img">
-                         <a href="#">
-                             <img src="./images/marblenotebook.jpg" alt="">
-                         </a>
-                     </div>
-                     <header class="card-header">
-                         <div class="card-meta">
-                             <h4 class="card-title">Blogs Coming Soon!</h4>
-                         </div>
-                     </header>
-                         <div class="card-body">
-                            <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati!</p> -->
-                         </div>
-                     </article>
-                     <article class="card mb-4 slide-in-left">
-                        <a href="#">
-                         <div class="card-img">
-                            <img src="./images/phoneandnotebook.jpg" alt="">
-                        </a>
-                     </div>
-                     <header class="card-header">
-                         <div class="card-meta">
-                             <h4 class="card-title">Blogs Coming Soon!</h4>
-                         </div>
-                     </header>
-                        <div class="card-body">
-                           <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati!</p> -->
-                        </div>
-                    </article>
-                 </div>
-              </div>
-          </div>
-      </main>
+  
+<div class="container-fluid">
+    <article class="card mb-4 slide-in-left">
+        <% blogs.forEach(function(blog){ %>
+     <div class="card-img">
+         <a href="#">
+         <img src="<%= blog.image%>" alt="">
+        </a>
+     </div>
+     <header class="card-header">
+         <div class="card-meta">
+             <h4 class="card-title"><%= blog.title %></h4>
+         </div>
+     </header>
+        <div class="card-body">
+           <p><%= blog.description %></p>
+         </div> 
+           <% }); %>
+    </article>
  
+</div>
 
 
 
