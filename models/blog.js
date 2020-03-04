@@ -4,8 +4,8 @@ const mongoose = require('mongoose');
 
 const blogSchema = new mongoose.Schema({
     title: String,
-    image:     { type: Buffer, required:true },
-    imageType:{ type: String, required:true },
+    blogImage:     { type: Buffer, required:true },
+    blogImageType:{ type: String, required:true },
     description: String,
     article: String,
     createdAt: {type: Date, default: Date.now },
@@ -14,9 +14,9 @@ const blogSchema = new mongoose.Schema({
     
 });
 
-blogSchema.virtual('imagePath').get(function() {
-    if (this.image != null && this.imageType != null) {
-      return `data:${this.imageType};charset=utf-8;base64,${this.image.toString('base64')}`
+blogSchema.virtual('blogImagePath').get(function() {
+    if (this.blogImage != null && this.blogImageType != null) {
+      return `data:${this.blogImageType};charset=utf-8;base64,${this.blogImage.toString('base64')}`
     }
   })
 

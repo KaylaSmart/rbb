@@ -1,5 +1,5 @@
 const express = require('express');
-const fs = require('fs');
+// const fs = require('fs');
 const router = express.Router();
 const Blog = require('../models/blog');
 const {isLoggedIn, checkUserBlog} = require('../middleware/index');
@@ -36,26 +36,77 @@ router.get("/new", function(req, res){
 });
 
 //CREATE - add new Blog to DB
-router.post("/" ,function(req, res){
+// router.post("/" ,function(req, res){
 
-  var title = req.body.title;
-  var desc = req.body.description;
-  var author = req.body.author;
-  var article = req.body.article;
-  var newBlog = {title: title, description: desc, author:author, article:article};
-  saveImage(newBlog, req.body.image)
+//   // var 
+//   // var desc = req.body.description;
+//   // var author = req.body.author;
+//   // var article = req.body.article;
+//    var image = JSON.stringify(req.body.image);
+//   // var newBlog = {title: title, description: desc, author:author, article:article, image:image};
+//   const newBlog = new Blog({
+//     title:req.body.title,
+//     desc: req.body.description,
+//     author:  req.body.author,
+//     article: req.body.article,
+//     image: image
+//   }
+  
+//   )
 
-  // Create a new campground and save to DB
-    Blog.create(newBlog, function(err){
-       if(err){
-            console.log(err);
-        } else {
-            //redirect back to campgrounds page
-            console.log('New blog entry!');
-            res.redirect("admin");
-        }
-    });
-  });
+//   // Create a new campground and save to DB
+//     Blog.create(newBlog, function(err){
+//       saveImage(newBlog, image)
+//        if(err){
+//             console.log(err);
+//         } else {
+//             //redirect back to campgrounds page
+//             console.log('New blog entry!');
+//             res.redirect("admin");
+//         }
+//     })
+
+//  function saveImage( newBlog , imageEncoded){
+//   if(imageEncoded == null) return
+//    const image = JSON.stringify(imageEncoded)
+//   if(image != null && imageMimeTypes.includes(image.type)) {
+//     newBlog.image = new Buffer.from(image.data, 'base64')
+//     newBlog.imageType = image.type
+//   }
+// }
+// ;
+//   });
+
+
+// Create Book Route
+router.post('/', async (req, res) => {
+  const blog = new Blog({
+    title: req.body.title,
+    author: req.body.author,
+    createdAt: new Date(req.body.publishDate),
+    description: req.body.description,
+    article: req.body.article
+  })
+  saveBlogImage(blog, req.body.image)
+  const newBlog = await Blog.create(blog)
+  try {
+      res.redirect(`admin/${newBlog.id}`)
+     
+  } catch {
+    console.log(err)
+    // renderNewPage(res, blog, true)
+  }
+});
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -113,14 +164,16 @@ router.delete("/:id",  function(req, res) {
 
 
 
-function saveImage( newBlog , imageEncoded){
-  if(imageEncoded == null) return
-   const image = JSON.parse(imageEncoded)
-  if(image != null && imageMimeTypes.includes(image.type)) {
-    newBlog.image = new Buffer.from(image.data, 'base64')
-    newBlog.imageType = image.type
+function saveBlogImage(blog, imageEncoded) {
+  if (imageEncoded == null) return
+  const image = JSON.parse(imageEncoded)
+  if (image != null && imageMimeTypes.includes(image.type)) {
+    blog.blogImage = new Buffer.from(image.data, 'base64')
+    blog.blogImageType = image.type
   }
 }
+
+
 
 
 module.exports = router;

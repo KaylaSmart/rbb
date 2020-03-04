@@ -92,6 +92,13 @@ app.use('/', indexRoutes);
 app.use('/blogs', blogRoutes);
 app.use('/admin', adminRoutes);
 // app.use("/admin/:id/post", postRoutes);
+// app.post('/api/images', function(req,res){
+//     var newItem = new Item();
+//     newItem.img.data =
+//     fs.readFileSync(req.files.blogImage.path)
+//     newItem.img.contentType = ['image/png','image/jpg', 'image/jpeg'];
+//     newItem.save();
+// })
 
 
 app.listen(port,() =>{
