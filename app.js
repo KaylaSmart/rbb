@@ -2,27 +2,27 @@ const express = require('express');
 const session = require('express-session');
 const  fs = require('fs');
 const FilePond = require('filepond');
-const MongoDBStore = require('connect-mongodb-session')(session);
-const mongoose = require('mongoose'),
-     methodOverride = require('method-override'),
+// const MongoDBStore = require('connect-mongodb-session')(session);
+// const mongoose = require('mongoose')
+   const  methodOverride = require('method-override'),
         app = express(),
         passport = require('passport'),
         bodyParser = require('body-parser'),
         LocalStrategy = require('passport-local'),
         passportLocalMongoose = require('passport-local-mongoose'),
         User = require('./models/user'),
-        Blog = require('./models/blog'),
+        // Blog = require('./models/blog'),
         flash = require('connect-flash'),
         logger = require('morgan');
         // const multer = require('multer');
         const GridFsStorage = require("multer-gridfs-storage");
 const Grid = require("gridfs-stream");
    
-const store = new MongoDBStore({
-        uri: 'mongodb://heroku_xpflmzb1:ddpf9gd8uskf0qhob8lp97m1o3@ds049467.mlab.com:49467/heroku_xpflmzb1',
-        collection: 'mySessions',   
-        useUnifiedTopology: true 
-});
+// const store = new MongoDBStore({
+//         uri: 'mongodb://heroku_xpflmzb1:ddpf9gd8uskf0qhob8lp97m1o3@ds049467.mlab.com:49467/heroku_xpflmzb1',
+//         collection: 'mySessions',   
+//         useUnifiedTopology: true 
+// });
 
 
 // app.use(
@@ -41,21 +41,21 @@ const path = require('path');
 
 const port = process.env.PORT || 5000;
 
-const mongoURI = 'mongodb://heroku_xpflmzb1:ddpf9gd8uskf0qhob8lp97m1o3@ds049467.mlab.com:49467/heroku_xpflmzb1';
+// const mongoURI = 'mongodb://heroku_xpflmzb1:ddpf9gd8uskf0qhob8lp97m1o3@ds049467.mlab.com:49467/heroku_xpflmzb1';
 
 
-mongoose.connect('mongodb://heroku_xpflmzb1:ddpf9gd8uskf0qhob8lp97m1o3@ds049467.mlab.com:49467/heroku_xpflmzb1', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-    }).then(() => {
-        console.log('Connected to DB!');
-    }).catch(err => {
-         console.log('ERROR', err.message);     
-    });
+// mongoose.connect('mongodb://heroku_xpflmzb1:ddpf9gd8uskf0qhob8lp97m1o3@ds049467.mlab.com:49467/heroku_xpflmzb1', {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+//     }).then(() => {
+//         console.log('Connected to DB!');
+//     }).catch(err => {
+//          console.log('ERROR', err.message);     
+//     });
 
-mongoose.Promise = global.Promise;
+// mongoose.Promise = global.Promise;
 
-mongoose.set('useCreateIndex', true, );
+// mongoose.set('useCreateIndex', true, );
 
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -89,7 +89,7 @@ passport.deserializeUser(User.deserializeUser());//unencode
 
  
 app.use('/', indexRoutes);
-app.use('/blogs', blogRoutes);
+// app.use('/blogs', blogRoutes);
 app.use('/admin', adminRoutes);
 // app.use("/admin/:id/post", postRoutes);
 // app.post('/api/images', function(req,res){

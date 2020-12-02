@@ -22,9 +22,9 @@ router.get('/podcast', function(req, res){
     res.render('pod');
 });
 
-router.get('/blog', function(req, res){
-    res.render('blogs');
-});
+// router.get('/blog', function(req, res){
+//     res.render('blogs');
+// });
 
 
 router.get('/secret', function(req, res){
