@@ -72,7 +72,7 @@ app.use(passport.session());
 app.use(require('express-session')({
     secret: "Gleemer Slaps so Dang hard",
     resave: false,
-    store: store,
+   
     saveUninitialized: false
 }));
 
